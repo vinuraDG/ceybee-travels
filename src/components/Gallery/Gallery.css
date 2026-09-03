@@ -34,16 +34,34 @@
 .gallery-img:hover img { transform: scale(1.08); }
 .gallery-img-overlay {
   position: absolute; inset: 0;
-  background: rgba(27,94,137,0);
-  transition: background 0.3s;
+  background: rgba(10,22,40,0);
+  transition: background 0.35s ease;
   display: flex; align-items: center; justify-content: center;
 }
-.gallery-img:hover .gallery-img-overlay { background: rgba(27,94,137,0.15); }
-.gallery-img-overlay span {
-  opacity: 0; color: var(--white); font-size: 1.5rem;
-  transition: opacity 0.3s;
+.gallery-img:hover .gallery-img-overlay { background: rgba(10,22,40,0.42); }
+
+.gallery-hover-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 8px 16px;
+  border-radius: 100px;
+  opacity: 0;
+  transform: scale(0.88);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.gallery-img:hover .gallery-img-overlay span { opacity: 1; }
+.gallery-img:hover .gallery-hover-badge {
+  opacity: 1;
+  transform: scale(1);
+}
 
 /* Fades on edges */
 .gallery-strip::before,

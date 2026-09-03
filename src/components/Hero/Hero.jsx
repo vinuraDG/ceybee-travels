@@ -5,8 +5,28 @@ import { heroSlides } from '../../data/siteData';
 import { IconStar, IconMapPin, IconSparkles, IconCalendar, IconSearch } from '../common/Icons';
 import './Hero.css';
 
+const WA_NUMBER = '94773506345';
+
+function buildWhatsAppURL(destination, experience, month) {
+  const dest = destination || 'Sri Lanka';
+  const exp  = experience  || 'a custom experience';
+  const date = month       || 'a flexible date';
+
+  const msg =
+    `Hi CeyBee Travels! I'd like to inquire about a trip.\n\n` +
+    `📍 Destination: ${dest}\n` +
+    `✨ Experience: ${exp}\n` +
+    `📅 Travel Month: ${date}\n\n` +
+    `Could you help me plan this trip? Looking forward to hearing from you!`;
+
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+}
+
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [destination, setDestination] = useState('');
+  const [experience, setExperience] = useState('');
+  const [month, setMonth] = useState('');
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -95,7 +115,7 @@ export default function Hero() {
               <label>Destination</label>
               <div className="search-input">
                 <span className="search-icon"><IconMapPin width={16} height={16} /></span>
-                <select>
+                <select value={destination} onChange={e => setDestination(e.target.value)}>
                   <option value="">Where to go?</option>
                   <option>Sigiriya</option>
                   <option>Ella</option>
@@ -103,6 +123,8 @@ export default function Hero() {
                   <option>Kandy</option>
                   <option>Yala</option>
                   <option>Galle</option>
+                  <option>Colombo</option>
+                  <option>Nuwara Eliya</option>
                 </select>
               </div>
             </div>
@@ -110,7 +132,7 @@ export default function Hero() {
               <label>Experience</label>
               <div className="search-input">
                 <span className="search-icon"><IconSparkles width={16} height={16} /></span>
-                <select>
+                <select value={experience} onChange={e => setExperience(e.target.value)}>
                   <option value="">What's your mood?</option>
                   <option>Adventure</option>
                   <option>Beach &amp; Relaxation</option>
@@ -125,7 +147,7 @@ export default function Hero() {
               <label>Dates</label>
               <div className="search-input">
                 <span className="search-icon"><IconCalendar width={16} height={16} /></span>
-                <select>
+                <select value={month} onChange={e => setMonth(e.target.value)}>
                   <option value="">Approx. Month</option>
                   <option>January</option><option>February</option>
                   <option>March</option><option>April</option>
@@ -138,9 +160,14 @@ export default function Hero() {
             </div>
           </div>
           <div className="hero-search-action">
-            <ScrollLink to="contact" {...scrollProps} className="search-btn">
+            <a
+              href={buildWhatsAppURL(destination, experience, month)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="search-btn"
+            >
               <IconSearch width={16} height={16} /> Search Inquiry
-            </ScrollLink>
+            </a>
           </div>
         </div>
       </div>

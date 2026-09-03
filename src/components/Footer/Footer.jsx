@@ -1,7 +1,8 @@
 import { Link as ScrollLink } from 'react-scroll';
 import { IconPhone, IconMail, IconMapPin, IconWhatsApp, IconInstagram, IconFacebook, IconTikTok, IconTripAdvisor } from '../common/Icons';
-const logo = '/assets/logo/logo.png';
 import './Footer.css';
+
+const logo = '/assets/logo/logo.png';
 
 const quickLinks = ['About Us', 'Tours', 'Services', 'Fleet', 'Contact'];
 const tourLinks = ["Nature's Romance", 'Guardian Journey', 'Beach Paradise', 'Grand Tour', 'Custom Tour'];

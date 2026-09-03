@@ -1,7 +1,29 @@
+// ─── Cloudinary setup ─────────────────────────────────────────────────────
+// 1. Replace YOUR_CLOUD_NAME below with your Cloudinary cloud name
+// 2. Upload images to Cloudinary into the folder structure:
+//      ceybee-travels/hero/
+//      ceybee-travels/destinations/
+//      ceybee-travels/tours/
+//      ceybee-travels/about/
+//      ceybee-travels/fleet/
+//      ceybee-travels/gallery/
+// 3. Use C() for your own Cloudinary images, U() for Unsplash fallbacks
+
+const CLOUD = 'vvti1pbk';
+
+// Cloudinary URL builder — auto format (WebP), auto quality, resize to fit
+const C = (folder, filename, w = 800, h = 600) =>
+  `https://res.cloudinary.com/${CLOUD}/image/upload/w_${w},h_${h},c_fill,f_auto,q_auto/ceybee-travels/${folder}/${filename}`;
+
+// Root-level Cloudinary image (no subfolder prefix)
+const CR = (publicId, w = 800, h = 600) =>
+  `https://res.cloudinary.com/${CLOUD}/image/upload/w_${w},h_${h},c_fill,f_auto,q_auto/${publicId}`;
+
+// Unsplash fallback (used until replaced with your own Cloudinary images)
 const U = (id, w = 800, h = 600) =>
   `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&auto=format&fit=crop&q=80`;
 
-// All verified Sri Lanka images from Unsplash
+// ─── Unsplash photo IDs (fallback until Cloudinary images are uploaded) ───
 const SL = {
   sigiriyaAerial:  '1612862862126-865765df2ded', // Aerial Sigiriya Rock Fortress
   sigiriyaForest:  '1711797750174-c3750dd9d7c9', // Sigiriya rock in forest
@@ -241,37 +263,37 @@ export const fleet = [
   {
     name: 'Toyota Coaster',
     passengers: 20,
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&h=350&auto=format&fit=crop&q=80',
+    image: CR('Toyota_Coaster', 600, 350),
     features: ['Air Conditioning', 'Professional Driver', 'Insurance Covered', 'GPS Tracking', 'Ample Luggage Space'],
   },
   {
     name: 'Toyota HiAce',
     passengers: 12,
-    image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=600&h=350&auto=format&fit=crop&q=80',
+    image: CR('Toyota_HiAce', 600, 350),
     features: ['Air Conditioning', 'Professional Driver', 'Insurance Covered', 'GPS Tracking'],
   },
   {
     name: 'Toyota KDH Van',
     passengers: 6,
-    image: 'https://images.unsplash.com/photo-1543465077-db45d34b88a5?w=600&h=350&auto=format&fit=crop&q=80',
+    image: CR('Toyota_KDH_Van', 600, 350),
     features: ['Comfortable Seating', 'Air Conditioning', 'Experienced Driver', 'Well Maintained'],
   },
   {
     name: 'Honda Vezel SUV',
     passengers: 4,
-    image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&h=350&auto=format&fit=crop&q=80',
+    image: CR('Honda_Vezel_SUV', 600, 350),
     features: ['Fuel Efficient', 'Premium Comfort', 'Local Driver', '24/7 Support'],
   },
   {
     name: 'Toyota Prius',
     passengers: 3,
-    image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&h=350&auto=format&fit=crop&q=80',
+    image: CR('Toyota_Prius', 600, 350),
     features: ['Eco-Friendly', 'Premium Comfort', 'Local Driver', '24/7 Support'],
   },
   {
     name: 'Mini Car',
     passengers: 2,
-    image: 'https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?w=600&h=350&auto=format&fit=crop&q=80',
+    image: CR('Mini_Car', 600, 350),
     features: ['Fuel Efficient', 'City Ready', 'Local Driver', '24/7 Support'],
   },
 ];

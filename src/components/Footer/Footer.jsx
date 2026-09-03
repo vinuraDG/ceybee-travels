@@ -13,7 +13,7 @@ const socials = [
 ];
 const contacts = [
   { Icon: IconPhone,    text: '+94 77 350 6345',       href: 'tel:+94773506345' },
-  { Icon: IconMail,     text: 'info@ceyBeetravels.lk', href: 'mailto:info@ceyBeetravels.lk' },
+  { Icon: IconMail,     text: 'ceybeetravels@gmail.com', href: 'mailto:ceybeetravels@gmail.com' },
   { Icon: IconMapPin,   text: 'Sri Lanka',             href: '#' },
   { Icon: IconWhatsApp, text: 'WhatsApp',              href: 'https://wa.me/94773506345', external: true },
 ];

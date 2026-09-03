@@ -78,7 +78,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>2025 CeyBee Travels. All Rights Reserved.</span>
+          <span>@ 2026 Zentrix Solutions. All Rights Reserved.</span>
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

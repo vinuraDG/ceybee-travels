@@ -45,7 +45,7 @@ export default function Navbar() {
           </div>
 
           <div className="nav-cta">
-            <ScrollLink to="contact" {...scrollProps} className="btn btn-primary">
+            <ScrollLink to="contact" {...scrollProps} className="btn-book">
               Book Now
             </ScrollLink>
           </div>

@@ -209,37 +209,37 @@ export const fleet = [
   {
     name: 'Toyota Coaster',
     passengers: 20,
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&h=350&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1464219789935-c2d9d9aba644?w=600&h=350&auto=format&fit=crop&q=80',
     features: ['Air Conditioning', 'Professional Driver', 'Insurance Covered', 'GPS Tracking', 'Ample Luggage Space'],
   },
   {
     name: 'Toyota HiAce',
     passengers: 12,
-    image: 'https://images.unsplash.com/photo-1570125744261-7df6e51c5b04?w=600&h=350&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=350&auto=format&fit=crop&q=80',
     features: ['Air Conditioning', 'Professional Driver', 'Insurance Covered', 'GPS Tracking'],
   },
   {
     name: 'Toyota KDH Van',
     passengers: 6,
-    image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&h=350&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&h=350&auto=format&fit=crop&q=80',
     features: ['Comfortable Seating', 'Air Conditioning', 'Experienced Driver', 'Well Maintained'],
   },
   {
     name: 'Honda Vezel SUV',
     passengers: 4,
-    image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&h=350&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&h=350&auto=format&fit=crop&q=80',
     features: ['Fuel Efficient', 'Premium Comfort', 'Local Driver', '24/7 Support'],
   },
   {
     name: 'Toyota Prius',
     passengers: 3,
-    image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&h=350&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&h=350&auto=format&fit=crop&q=80',
     features: ['Eco-Friendly', 'Premium Comfort', 'Local Driver', '24/7 Support'],
   },
   {
     name: 'Mini Car',
     passengers: 2,
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&h=350&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1502161254066-6c74afbf07aa?w=600&h=350&auto=format&fit=crop&q=80',
     features: ['Fuel Efficient', 'City Ready', 'Local Driver', '24/7 Support'],
   },
 ];

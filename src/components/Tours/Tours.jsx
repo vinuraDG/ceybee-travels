@@ -24,10 +24,10 @@ export default function Tours() {
       <div className="container">
         <div ref={headerRef} className="section-header reveal">
           <span className="section-tag">Featured Tours</span>
-          <h2 className="section-title light">
+          <h2 className="section-title">
             Carefully Crafted <span>Journeys</span>
           </h2>
-          <p className="section-subtitle light">
+          <p className="section-subtitle">
             Showcasing the best of Sri Lanka — from ancient ruins to pristine beaches
           </p>
         </div>

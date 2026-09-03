@@ -1,0 +1,101 @@
+.fleet { padding: 100px 0; background: var(--cream-2); }
+.fleet-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.fleet-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--cream-2);
+  transition: var(--transition);
+}
+.fleet-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow);
+  border-color: rgba(27, 94, 137, 0.3);
+}
+.fleet-img {
+  height: 175px;
+  position: relative;
+  overflow: hidden;
+  background: var(--dark-3);
+}
+.fleet-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.fleet-card:hover .fleet-img img { transform: scale(1.06); }
+.fleet-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(13,13,13,0.6), transparent 50%);
+}
+.fleet-pax {
+  position: absolute;
+  bottom: 12px; right: 12px;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+.fleet-body { padding: 20px; }
+.fleet-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--dark);
+  margin-bottom: 12px;
+}
+.fleet-feats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.fleet-feat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-light);
+}
+.fleet-feat::before {
+  content: '✓';
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 0.72rem;
+}
+.fleet-badges {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 52px;
+}
+.fleet-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--white);
+  border: 1px solid var(--cream-2);
+  border-radius: 100px;
+  padding: 12px 22px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dark);
+}
+.fleet-badge-icon { font-size: 1.1rem; }
+
+@media (max-width: 900px) {
+  .fleet-grid { grid-template-columns: repeat(2, 1fr); }
+  .fleet { padding: 70px 0; }
+}
+@media (max-width: 600px) {
+  .fleet-grid { grid-template-columns: 1fr; }
+  .fleet-badges { gap: 10px; }
+  .fleet-badge { padding: 10px 16px; font-size: 0.82rem; }
+}

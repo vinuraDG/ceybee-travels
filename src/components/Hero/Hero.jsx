@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { heroSlides } from '../../data/siteData';
@@ -18,6 +18,7 @@ export default function Hero() {
   const slide = heroSlides[current];
 
   return (
+    <Fragment>
     <section id="hero" className="hero">
       <AnimatePresence initial={false}>
         <motion.div
@@ -71,7 +72,19 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Floating search bar */}
+      {/* Progress bar */}
+      <div className="hero-progress">
+        <motion.div
+          key={current}
+          className="hero-progress-bar"
+          initial={{ width: '0%' }}
+          animate={{ width: '100%' }}
+          transition={{ duration: 6, ease: 'linear' }}
+        />
+      </div>
+    </section>
+
+      {/* Floating search bar — outside hero so overflow:hidden doesn't clip it */}
       <div className="hero-search-wrap">
         <div className="hero-search">
           <div className="hero-search-fields">
@@ -128,17 +141,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Progress bar */}
-      <div className="hero-progress">
-        <motion.div
-          key={current}
-          className="hero-progress-bar"
-          initial={{ width: '0%' }}
-          animate={{ width: '100%' }}
-          transition={{ duration: 6, ease: 'linear' }}
-        />
-      </div>
-    </section>
+    </Fragment>
   );
 }

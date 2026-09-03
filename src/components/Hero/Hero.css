@@ -152,13 +152,11 @@
   background: var(--white);
 }
 
-/* ── Floating search bar ── */
+/* ── Floating search bar — sibling of hero, overlaps bottom ── */
 .hero-search-wrap {
-  position: absolute;
-  bottom: -71px;
-  left: 0;
-  right: 0;
-  z-index: 3;
+  position: relative;
+  z-index: 10;
+  margin-top: -71px;
   padding: 0 clamp(12px, 4vw, 40px);
 }
 

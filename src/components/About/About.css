@@ -1,7 +1,6 @@
 .about {
-  padding: 100px 0 100px;
+  padding: 80px 0 100px;
   background: var(--white);
-  margin-top: 71px; /* offset: search bar extends 71px below hero bottom */
 }
 
 .about-grid {

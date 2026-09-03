@@ -18,7 +18,7 @@ export default function Destinations() {
             Corners of <span>Paradise</span>
           </h2>
           <p className="section-subtitle">
-            From ancient rock fortresses to sun-kissed beaches — every destination tells a story
+            From ancient rock fortresses to sun-kissed beaches, every destination has a story worth seeing
           </p>
         </div>
       </div>

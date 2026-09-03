@@ -36,7 +36,7 @@ export const heroSlides = [
     image: U(SL.beach, 1920, 1080),
     title: 'Golden Beaches &',
     highlight: 'Crystal Waters',
-    sub: 'From Mirissa to Unawatuna — paradise is closer than you think.',
+    sub: 'From Mirissa to Unawatuna, paradise is closer than you think.',
   },
   {
     image: U(SL.ellaArches, 1920, 1080),
@@ -93,7 +93,7 @@ export const tours = [
     bestTime: 'Dec – Apr',
     groupSize: '2 People',
     difficulty: 'Easy',
-    description: "A dreamy escape through Sri Lanka's misty highlands, crafted for couples seeking romance and privacy. From scenic train rides through tea country to sunrise hikes above the clouds, every moment is designed to be unforgettable.",
+    description: "A romantic escape through Sri Lanka's misty highlands, built for couples who want privacy and real experiences. Scenic train rides through tea country, sunrise hikes above the clouds, quiet plantation stays — this one stays with you.",
     highlights: ['Horton Plains', 'Ella', 'Nine Arches Bridge', "Lipton's Seat"],
     included: ['Hotel pickups & drop-offs', 'All accommodation (3 nights)', 'Daily breakfast & dinner', 'Scenic train tickets', 'Expert local guide', 'All entrance fees', 'Air-conditioned transport'],
     itinerary: [
@@ -165,7 +165,7 @@ export const tours = [
     bestTime: 'Dec – Apr',
     groupSize: '2–8 People',
     difficulty: 'Moderate',
-    description: "The ultimate Sri Lanka experience — seven days covering ancient ruins, misty highlands, wildlife safaris, and pristine beaches. This is the trip of a lifetime, perfectly crafted for adventurers who want to see it all.",
+    description: "Seven days covering the best of Sri Lanka: ancient ruins, misty highlands, a real wildlife safari, and beautiful beaches. If you want to see the island properly without rushing, this is the trip to do it.",
     highlights: ['Sigiriya Rock', 'Kandy Temple', 'Nuwara Eliya', 'Ella Train', 'Yala Safari', 'Galle Fort'],
     included: ['All accommodation (7 nights)', 'Daily breakfast', 'Airport transfers', 'All entrance fees', 'Yala safari jeep', 'Expert guide throughout', 'Comfortable AC vehicle'],
     itinerary: [
@@ -215,7 +215,7 @@ export const tours = [
     bestTime: 'Jan – Apr',
     groupSize: '2–8 People',
     difficulty: 'Easy',
-    description: "Immerse yourself in 2,500 years of Sri Lankan civilization across five transformative days. Walk among UNESCO World Heritage sites, discover ancient Buddhist kingdoms, and experience the living traditions of Kandy.",
+    description: "Five days diving into Sri Lanka's history, from ancient Buddhist kingdoms to colonial forts. You'll walk through UNESCO World Heritage sites, hear real stories from local guides, and finish with a Kandyan cultural show.",
     highlights: ['Galle Fort', 'Colombo City', 'Anuradhapura', 'Polonnaruwa Ruins', 'Sigiriya', 'Kandy'],
     included: ['All accommodation (5 nights)', 'Daily breakfast', 'Cultural site entry fees', 'Expert history guide', 'Kandy cultural show', 'AC vehicle throughout', 'Airport transfers'],
     itinerary: [

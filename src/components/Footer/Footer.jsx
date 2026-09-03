@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="brand-logo">
               <img src={logo} alt="CeyBee Travels" />
             </div>
-            <p>Your trusted partner for exploring the beautiful island of Sri Lanka. We create unforgettable travel experiences with personalized service and local expertise.</p>
+            <p>CeyBee Travels is a Sri Lanka-based travel company that plans trips built around you. Local knowledge, honest service, and people who actually know the island.</p>
             <div className="footer-socials">
               {socials.map(({ Icon, label, href }, i) => (
                 <a key={i} href={href} className="footer-social" title={label} target="_blank" rel="noopener noreferrer">

@@ -20,7 +20,7 @@ export default function Services() {
               Comprehensive <span>Travel Solutions</span>
             </h2>
             <p className="section-subtitle">
-              Everything you need for an unforgettable Sri Lankan experience
+              Everything you need to travel Sri Lanka without the stress
             </p>
           </div>
 

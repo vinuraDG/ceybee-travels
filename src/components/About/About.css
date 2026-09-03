@@ -180,7 +180,7 @@
     order: -1;
     padding-bottom: 40px;
   }
-  .about-img-secondary { left: 0; bottom: 0; }
+  .about-logo-card { left: 0; bottom: 0; }
   .about-badge { top: 16px; right: 0; }
 }
 @media (max-width: 600px) {

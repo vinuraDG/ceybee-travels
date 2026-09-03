@@ -42,7 +42,7 @@ export default function Contact() {
             Let's Plan Your <span>Adventure</span>
           </h2>
           <p className="section-subtitle">
-            Ready to explore Sri Lanka? Get in touch and let's create unforgettable memories
+            Ready to explore Sri Lanka? Get in touch and we'll plan the trip together
           </p>
         </div>
 

@@ -17,7 +17,7 @@ export default function Gallery() {
             Live from <span>Sri Lanka</span>
           </h2>
           <p className="section-subtitle light">
-            Real journeys, real memories — moments captured by our travelers
+            Real journeys, real moments, captured by the people who traveled with us
           </p>
         </div>
       </div>

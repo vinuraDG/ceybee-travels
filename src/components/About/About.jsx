@@ -28,15 +28,15 @@ export default function About() {
               <em>to an Art Form</em>
             </h2>
             <p className="about-desc">
-              CeyBee Travels is a boutique travel company headquartered in Colombo, Sri Lanka.
-              Founded by passionate local travel experts, we specialize in crafting bespoke
-              journeys that reveal the true soul of the island — its ancient ruins, misty
-              highlands, golden beaches, and warm-hearted people.
+              CeyBee Travels is a boutique travel company based in Colombo, Sri Lanka.
+              Founded by a team of local travel experts, we put together trips that show
+              you the real island: ancient ruins, misty highlands, golden beaches, and the
+              genuinely warm people you meet along the way.
             </p>
             <p className="about-desc">
-              Every itinerary is built from scratch around you. Whether you dream of watching
-              leopards at Yala at dawn, sipping tea on a Nuwara Eliya estate, or surfing the
-              swells off Arugam Bay — we make it happen, seamlessly and authentically.
+              Every trip is planned around you, not a template. Whether you want to watch
+              leopards at Yala at dawn, sip tea on a Nuwara Eliya estate, or surf the
+              waves at Arugam Bay, we put it together and take care of the details.
             </p>
 
             <div className="about-stats">

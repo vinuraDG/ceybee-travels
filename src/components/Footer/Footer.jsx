@@ -1,4 +1,5 @@
 import { Link as ScrollLink } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import { IconPhone, IconMail, IconMapPin, IconWhatsApp, IconInstagram, IconFacebook, IconTikTok, IconTripAdvisor } from '../common/Icons';
 import './Footer.css';
 
@@ -15,7 +16,7 @@ const socials = [
 const contacts = [
   { Icon: IconPhone,    text: '+94 77 350 6345',       href: 'tel:+94773506345' },
   { Icon: IconMail,     text: 'ceybeetravels@gmail.com', href: 'mailto:ceybeetravels@gmail.com' },
-  { Icon: IconMapPin,   text: 'Sri Lanka',             href: '#' },
+  { Icon: IconMapPin,   text: 'Galle, Sri Lanka',       href: '#' },
   { Icon: IconWhatsApp, text: 'WhatsApp',              href: 'https://wa.me/94773506345', external: true },
 ];
 
@@ -78,11 +79,11 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>@ 2026 Zentrix Solutions. All Rights Reserved.</span>
+          <span>© Copyright 2026 CeyBee Travels. All Rights Reserved | Designed by <a href="#" className="footer-credit">Zentrix Solutions</a></span>
           <div className="footer-bottom-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Return Policy</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Service</Link>
+            <Link to="/return-policy">Return Policy</Link>
           </div>
         </div>
       </div>

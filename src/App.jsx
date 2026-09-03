@@ -12,6 +12,9 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import FloatingButtons from './components/common/FloatingButtons';
 import TourDetailPage from './components/TourDetail/TourDetailPage';
+import PrivacyPolicy from './components/Legal/PrivacyPolicy';
+import ReturnPolicy from './components/Legal/ReturnPolicy';
+import TermsConditions from './components/Legal/TermsConditions';
 import './App.css';
 
 function HomePage() {
@@ -40,6 +43,9 @@ export default function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/tours/:id" element={<TourDetailPage />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/return-policy" element={<ReturnPolicy />} />
+      <Route path="/terms" element={<TermsConditions />} />
     </Routes>
   );
 }

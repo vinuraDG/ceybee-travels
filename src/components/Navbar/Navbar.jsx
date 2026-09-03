@@ -37,7 +37,7 @@ export default function Navbar() {
           <ScrollLink to="hero" {...scrollProps} className="nav-logo">
             <img src={logo} alt="CeyBee Travels Logo" />
             <div className="nav-brand-text">
-              <span className="nav-brand-name">Cey Bee</span>
+              <span className="nav-brand-name">CeyBee</span>
               <span className="nav-brand-sub">Travels</span>
             </div>
           </ScrollLink>

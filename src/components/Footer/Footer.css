@@ -41,6 +41,15 @@
   transition: color 0.3s;
 }
 .footer-col ul li a:hover { color: var(--teal-light); }
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.45);
+  font-size: 0.875rem;
+  transition: color 0.3s;
+}
+.footer-contact-link:hover { color: var(--teal-light); }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.06);
   padding: 22px 0;

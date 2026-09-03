@@ -1,5 +1,13 @@
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { IconCompass, IconSparkles, IconCar, IconHandshake, IconAward } from '../common/Icons';
 import './About.css';
+
+const features = [
+  { Icon: IconCompass, text: 'Expert local knowledge & insider access' },
+  { Icon: IconSparkles, text: 'Fully personalized itineraries' },
+  { Icon: IconCar, text: 'Premium fleet with professional drivers' },
+  { Icon: IconHandshake, text: 'Trusted hotel & resort partnerships' },
+];
 
 export default function About() {
   const leftRef = useScrollReveal();
@@ -10,7 +18,6 @@ export default function About() {
       <div className="container">
         <div className="about-grid">
 
-          {/* Left — text */}
           <div ref={leftRef} className="about-text reveal-left">
             <p className="about-tag">The CeyBee Difference</p>
             <h2 className="about-heading">
@@ -37,21 +44,15 @@ export default function About() {
             </div>
 
             <div className="about-features">
-              {[
-                { icon: '🧭', text: 'Expert local knowledge & insider access' },
-                { icon: '✨', text: 'Fully personalized itineraries' },
-                { icon: '🚗', text: 'Premium fleet with professional drivers' },
-                { icon: '🤝', text: 'Trusted hotel & resort partnerships' },
-              ].map((f, i) => (
+              {features.map(({ Icon, text }, i) => (
                 <div key={i} className="about-feature">
-                  <span className="af-icon">{f.icon}</span>
-                  <span>{f.text}</span>
+                  <span className="af-icon"><Icon width={18} height={18} /></span>
+                  <span>{text}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right — image stack */}
           <div ref={rightRef} className="about-images reveal-right">
             <div className="about-img-main">
               <img
@@ -68,7 +69,7 @@ export default function About() {
               />
             </div>
             <div className="about-badge">
-              <span className="badge-icon">⭐</span>
+              <span className="badge-icon"><IconAward width={22} height={22} /></span>
               <div>
                 <strong>Certified Excellence</strong>
                 <p>Recognised by the Sri Lanka Tourism Development Authority</p>

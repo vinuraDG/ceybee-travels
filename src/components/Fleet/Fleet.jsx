@@ -1,13 +1,14 @@
 import { motion } from 'framer-motion';
 import { fleet } from '../../data/siteData';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { IconShield, IconUsers, IconWrench, IconBriefcase } from '../common/Icons';
 import './Fleet.css';
 
 const badges = [
-  { icon: '🛡️', label: 'Fully Insured' },
-  { icon: '🧑‍✈️', label: 'Expert Drivers' },
-  { icon: '🔧', label: 'Well Maintained' },
-  { icon: '🧳', label: 'Spacious Luggage' },
+  { Icon: IconShield,    label: 'Fully Insured' },
+  { Icon: IconUsers,     label: 'Expert Drivers' },
+  { Icon: IconWrench,    label: 'Well Maintained' },
+  { Icon: IconBriefcase, label: 'Spacious Luggage' },
 ];
 
 export default function Fleet() {
@@ -19,7 +20,7 @@ export default function Fleet() {
         <div ref={headerRef} className="section-header reveal">
           <span className="section-tag">Our Fleet</span>
           <h2 className="section-title">
-            Travel in <span>Comfort & Style</span>
+            Travel in <span>Comfort &amp; Style</span>
           </h2>
           <p className="section-subtitle">
             Well-maintained vehicles with experienced local drivers for your comfort and safety
@@ -39,7 +40,9 @@ export default function Fleet() {
               <div className="fleet-img">
                 <img src={v.image} alt={v.name} loading="lazy" />
                 <div className="fleet-img-overlay" />
-                <span className="fleet-pax">👥 {v.passengers} pax</span>
+                <span className="fleet-pax">
+                  <IconUsers width={13} height={13} /> {v.passengers} pax
+                </span>
               </div>
               <div className="fleet-body">
                 <div className="fleet-name">{v.name}</div>
@@ -54,7 +57,7 @@ export default function Fleet() {
         </div>
 
         <div className="fleet-badges">
-          {badges.map((b, i) => (
+          {badges.map(({ Icon, label }, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -63,8 +66,8 @@ export default function Fleet() {
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="fleet-badge"
             >
-              <span className="fleet-badge-icon">{b.icon}</span>
-              {b.label}
+              <span className="fleet-badge-icon"><Icon width={20} height={20} /></span>
+              {label}
             </motion.div>
           ))}
         </div>

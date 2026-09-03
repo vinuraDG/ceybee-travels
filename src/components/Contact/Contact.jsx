@@ -1,20 +1,24 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import {
+  IconPhone, IconMail, IconMapPin, IconWhatsApp,
+  IconInstagram, IconFacebook, IconTikTok, IconTripAdvisor, IconCheckCircle
+} from '../common/Icons';
 import './Contact.css';
 
 const methods = [
-  { icon: '📞', label: 'Phone', value: '+94 77 350 6345', href: 'tel:+94773506345' },
-  { icon: '✉️', label: 'Email', value: 'info@ceyBeetravels.lk', href: 'mailto:info@ceyBeetravels.lk' },
-  { icon: '📍', label: 'Location', value: 'Sri Lanka', href: '#' },
-  { icon: '💬', label: 'WhatsApp', value: '+94 77 350 6345', href: 'https://wa.me/94773506345' },
+  { Icon: IconPhone,    label: 'Phone',     value: '+94 77 350 6345',       href: 'tel:+94773506345' },
+  { Icon: IconMail,     label: 'Email',     value: 'info@ceyBeetravels.lk', href: 'mailto:info@ceyBeetravels.lk' },
+  { Icon: IconMapPin,   label: 'Location',  value: 'Sri Lanka',             href: '#' },
+  { Icon: IconWhatsApp, label: 'WhatsApp',  value: '+94 77 350 6345',       href: 'https://wa.me/94773506345' },
 ];
 
 const socials = [
-  { icon: '📷', label: 'Instagram', href: '#' },
-  { icon: '👤', label: 'Facebook', href: '#' },
-  { icon: '🎵', label: 'TikTok', href: '#' },
-  { icon: '⭐', label: 'TripAdvisor', href: '#' },
+  { Icon: IconInstagram,   label: 'Instagram',   href: '#' },
+  { Icon: IconFacebook,    label: 'Facebook',    href: '#' },
+  { Icon: IconTikTok,      label: 'TikTok',      href: '#' },
+  { Icon: IconTripAdvisor, label: 'TripAdvisor', href: '#' },
 ];
 
 export default function Contact() {
@@ -56,21 +60,21 @@ export default function Contact() {
             </p>
 
             <div className="contact-methods">
-              {methods.map((m, i) => (
-                <a key={i} href={m.href} className="contact-method" target={m.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
-                  <div className="method-icon">{m.icon}</div>
+              {methods.map(({ Icon, label, value, href }, i) => (
+                <a key={i} href={href} className="contact-method" target={href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
+                  <div className="method-icon"><Icon width={20} height={20} /></div>
                   <div className="method-text">
-                    <strong>{m.label}</strong>
-                    <span>{m.value}</span>
+                    <strong>{label}</strong>
+                    <span>{value}</span>
                   </div>
                 </a>
               ))}
             </div>
 
             <div className="social-row">
-              {socials.map((s, i) => (
-                <a key={i} href={s.href} className="social-btn" title={s.label} target="_blank" rel="noopener noreferrer">
-                  {s.icon}
+              {socials.map(({ Icon, label, href }, i) => (
+                <a key={i} href={href} className="social-btn" title={label} target="_blank" rel="noopener noreferrer">
+                  <Icon width={18} height={18} />
                 </a>
               ))}
             </div>
@@ -86,7 +90,7 @@ export default function Contact() {
           >
             {submitted ? (
               <div className="form-success">
-                <div className="success-icon">🎉</div>
+                <div className="success-icon"><IconCheckCircle width={48} height={48} style={{ color: '#17A58A' }} /></div>
                 <h3>Message Sent!</h3>
                 <p>Thank you for reaching out. Our team will get back to you within 24 hours.</p>
               </div>
@@ -114,9 +118,9 @@ export default function Contact() {
                   <div className="form-group">
                     <label>Number of Travelers</label>
                     <select>
-                      <option>1–2 people</option>
-                      <option>3–4 people</option>
-                      <option>5–8 people</option>
+                      <option>1-2 people</option>
+                      <option>3-4 people</option>
+                      <option>5-8 people</option>
                       <option>9+ people</option>
                     </select>
                   </div>
@@ -126,7 +130,7 @@ export default function Contact() {
                   <textarea placeholder="Tell us about your dream trip..." required />
                 </div>
                 <button type="submit" className="btn btn-primary form-submit" disabled={loading}>
-                  {loading ? 'Sending...' : 'Send Message →'}
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             )}

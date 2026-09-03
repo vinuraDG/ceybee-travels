@@ -88,7 +88,7 @@
   font-weight: 600;
   color: var(--dark);
 }
-.fleet-badge-icon { font-size: 1.1rem; }
+.fleet-badge-icon { display: flex; align-items: center; color: var(--primary); }
 
 @media (max-width: 900px) {
   .fleet-grid { grid-template-columns: repeat(2, 1fr); }

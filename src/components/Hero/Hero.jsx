@@ -2,6 +2,7 @@ import { useState, useEffect, Fragment } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { heroSlides } from '../../data/siteData';
+import { IconStar, IconMapPin, IconSparkles, IconCalendar, IconSearch } from '../common/Icons';
 import './Hero.css';
 
 export default function Hero() {
@@ -44,7 +45,12 @@ export default function Hero() {
             exit={{ opacity: 0, y: -16 }}
             transition={{ duration: 0.75, ease: 'easeOut' }}
           >
-            <p className="hero-eyebrow">★★★★★ &nbsp; Trusted by 1000+ travelers</p>
+            <p className="hero-eyebrow">
+              <span className="hero-stars">
+                {[0,1,2,3,4].map(i => <IconStar key={i} width={13} height={13} style={{ color: '#F5A623' }} />)}
+              </span>
+              Trusted by 1000+ travelers
+            </p>
             <h1 className="hero-title">{slide.title} <em>{slide.highlight}</em></h1>
             <p className="hero-sub">{slide.sub}</p>
 
@@ -59,7 +65,6 @@ export default function Hero() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Dots */}
         <div className="hero-dots">
           {heroSlides.map((_, i) => (
             <button
@@ -72,7 +77,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Progress bar */}
       <div className="hero-progress">
         <motion.div
           key={current}
@@ -84,14 +88,13 @@ export default function Hero() {
       </div>
     </section>
 
-      {/* Floating search bar — outside hero so overflow:hidden doesn't clip it */}
       <div className="hero-search-wrap">
         <div className="hero-search">
           <div className="hero-search-fields">
             <div className="search-field">
               <label>Destination</label>
               <div className="search-input">
-                <span className="search-icon">📍</span>
+                <span className="search-icon"><IconMapPin width={16} height={16} /></span>
                 <select>
                   <option value="">Where to go?</option>
                   <option>Sigiriya</option>
@@ -106,11 +109,11 @@ export default function Hero() {
             <div className="search-field">
               <label>Experience</label>
               <div className="search-input">
-                <span className="search-icon">✨</span>
+                <span className="search-icon"><IconSparkles width={16} height={16} /></span>
                 <select>
                   <option value="">What's your mood?</option>
                   <option>Adventure</option>
-                  <option>Beach & Relaxation</option>
+                  <option>Beach &amp; Relaxation</option>
                   <option>Cultural Heritage</option>
                   <option>Wildlife Safari</option>
                   <option>Honeymoon</option>
@@ -121,7 +124,7 @@ export default function Hero() {
             <div className="search-field">
               <label>Dates</label>
               <div className="search-input">
-                <span className="search-icon">📅</span>
+                <span className="search-icon"><IconCalendar width={16} height={16} /></span>
                 <select>
                   <option value="">Approx. Month</option>
                   <option>January</option><option>February</option>
@@ -136,7 +139,7 @@ export default function Hero() {
           </div>
           <div className="hero-search-action">
             <ScrollLink to="contact" {...scrollProps} className="search-btn">
-              🔍 Search Inquiry
+              <IconSearch width={16} height={16} /> Search Inquiry
             </ScrollLink>
           </div>
         </div>

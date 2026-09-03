@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
+import { IconClose } from '../common/Icons';
 import './Navbar.css';
 const logo = '/assets/logo/logo.png';
 
@@ -61,7 +62,7 @@ export default function Navbar() {
       </nav>
 
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-        <button className="mobile-close" onClick={() => setMenuOpen(false)}>✕</button>
+        <button className="mobile-close" onClick={() => setMenuOpen(false)} aria-label="Close menu"><IconClose width={24} height={24} /></button>
         {navItems.map(item => (
           <ScrollLink key={item.to} to={item.to} {...scrollProps} onClick={() => setMenuOpen(false)}>
             {item.label}

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { testimonials, stats } from '../../data/siteData';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { IconStar } from '../common/Icons';
 import './Testimonials.css';
 
 function Counter({ target, suffix }) {
@@ -55,7 +56,11 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: i * 0.12 }}
               className="t-card"
             >
-              <div className="t-stars">{'★'.repeat(t.stars)}</div>
+              <div className="t-stars">
+                {Array.from({ length: t.stars }).map((_, si) => (
+                  <IconStar key={si} width={14} height={14} style={{ color: '#F5A623' }} />
+                ))}
+              </div>
               <p className="t-text">"{t.text}"</p>
               <div className="t-author">
                 <div className="t-avatar">{t.initials}</div>

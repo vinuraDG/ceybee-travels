@@ -135,7 +135,7 @@
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   max-width: 220px;
 }
-.badge-icon { font-size: 1.4rem; flex-shrink: 0; }
+.badge-icon { display: flex; align-items: center; color: var(--primary); flex-shrink: 0; }
 .about-badge strong {
   display: block;
   font-size: 0.82rem;

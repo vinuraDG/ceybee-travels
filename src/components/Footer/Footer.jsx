@@ -1,14 +1,21 @@
 import { Link as ScrollLink } from 'react-scroll';
+import { IconPhone, IconMail, IconMapPin, IconWhatsApp, IconInstagram, IconFacebook, IconTikTok, IconTripAdvisor } from '../common/Icons';
 const logo = '/assets/logo/logo.png';
 import './Footer.css';
 
 const quickLinks = ['About Us', 'Tours', 'Services', 'Fleet', 'Contact'];
 const tourLinks = ["Nature's Romance", 'Guardian Journey', 'Beach Paradise', 'Grand Tour', 'Custom Tour'];
 const socials = [
-  { icon: '📷', label: 'Instagram', href: '#' },
-  { icon: '👤', label: 'Facebook', href: '#' },
-  { icon: '🎵', label: 'TikTok', href: '#' },
-  { icon: '⭐', label: 'TripAdvisor', href: '#' },
+  { Icon: IconInstagram,   label: 'Instagram',   href: '#' },
+  { Icon: IconFacebook,    label: 'Facebook',    href: '#' },
+  { Icon: IconTikTok,      label: 'TikTok',      href: '#' },
+  { Icon: IconTripAdvisor, label: 'TripAdvisor', href: '#' },
+];
+const contacts = [
+  { Icon: IconPhone,    text: '+94 77 350 6345',       href: 'tel:+94773506345' },
+  { Icon: IconMail,     text: 'info@ceyBeetravels.lk', href: 'mailto:info@ceyBeetravels.lk' },
+  { Icon: IconMapPin,   text: 'Sri Lanka',             href: '#' },
+  { Icon: IconWhatsApp, text: 'WhatsApp',              href: 'https://wa.me/94773506345', external: true },
 ];
 
 const scrollProps = { smooth: true, duration: 600, offset: -70 };
@@ -24,9 +31,9 @@ export default function Footer() {
             </div>
             <p>Your trusted partner for exploring the beautiful island of Sri Lanka. We create unforgettable travel experiences with personalized service and local expertise.</p>
             <div className="footer-socials">
-              {socials.map((s, i) => (
-                <a key={i} href={s.href} className="footer-social" title={s.label} target="_blank" rel="noopener noreferrer">
-                  {s.icon}
+              {socials.map(({ Icon, label, href }, i) => (
+                <a key={i} href={href} className="footer-social" title={label} target="_blank" rel="noopener noreferrer">
+                  <Icon width={18} height={18} />
                 </a>
               ))}
             </div>
@@ -57,16 +64,20 @@ export default function Footer() {
           <div className="footer-col">
             <h4>Contact Info</h4>
             <ul>
-              <li><a href="tel:+94773506345">📞 +94 77 350 6345</a></li>
-              <li><a href="mailto:info@ceyBeetravels.lk">✉️ info@ceyBeetravels.lk</a></li>
-              <li><a href="#">📍 Sri Lanka</a></li>
-              <li><a href="https://wa.me/94773506345" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a></li>
+              {contacts.map(({ Icon, text, href, external }, i) => (
+                <li key={i}>
+                  <a href={href} target={external ? '_blank' : undefined} rel="noopener noreferrer" className="footer-contact-link">
+                    <Icon width={14} height={14} />
+                    {text}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <span>© 2025 CeyBee Travels. All Rights Reserved.</span>
+          <span>2025 CeyBee Travels. All Rights Reserved.</span>
           <div className="footer-bottom-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

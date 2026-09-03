@@ -35,7 +35,7 @@
   border-radius: 10px;
   background: rgba(27, 94, 137, 0.08);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; flex-shrink: 0;
+  color: var(--primary); flex-shrink: 0;
 }
 .method-text strong { display: block; font-size: 0.78rem; color: var(--text-light); font-weight: 500; }
 .method-text span { color: var(--dark); font-weight: 600; font-size: 0.92rem; }
@@ -46,13 +46,12 @@
   background: var(--white);
   border: 1px solid var(--cream-2);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem;
+  color: var(--text);
   cursor: pointer;
   transition: var(--transition);
   text-decoration: none;
-  color: inherit;
 }
-.social-btn:hover { background: var(--primary); border-color: var(--primary); transform: translateY(-2px); }
+.social-btn:hover { background: var(--primary); border-color: var(--primary); color: var(--white); transform: translateY(-2px); }
 
 .contact-form-wrap {
   background: var(--white);

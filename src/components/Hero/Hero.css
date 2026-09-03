@@ -47,13 +47,16 @@
 }
 
 .hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: rgba(255,255,255,0.75);
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 22px;
-  font-weight: 500;
 }
+.hero-stars { display: flex; align-items: center; gap: 2px; }
 
 .hero-title {
   font-family: var(--font-heading);

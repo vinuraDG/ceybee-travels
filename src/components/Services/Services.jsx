@@ -2,7 +2,10 @@ import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { services } from '../../data/siteData';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { IconMap, IconCar, IconBuilding, IconPlane, IconCompass, IconGlobe, IconWhatsApp } from '../common/Icons';
 import './Services.css';
+
+const serviceIcons = [IconMap, IconCar, IconBuilding, IconPlane, IconCompass, IconGlobe];
 
 export default function Services() {
   const headerRef = useScrollReveal();
@@ -22,20 +25,23 @@ export default function Services() {
           </div>
 
           <div className="services-grid">
-            {services.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="service-card"
-              >
-                <div className="service-icon">{s.icon}</div>
-                <h3>{s.title}</h3>
-                <p>{s.desc}</p>
-              </motion.div>
-            ))}
+            {services.map((s, i) => {
+              const Icon = serviceIcons[i] || IconGlobe;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-40px' }}
+                  transition={{ duration: 0.5, delay: i * 0.08 }}
+                  className="service-card"
+                >
+                  <div className="service-icon"><Icon width={28} height={28} /></div>
+                  <h3>{s.title}</h3>
+                  <p>{s.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -49,8 +55,8 @@ export default function Services() {
               <ScrollLink to="contact" smooth duration={600} offset={-70} className="btn btn-primary">
                 Get Your Custom Quote
               </ScrollLink>
-              <a href="https://wa.me/94XXXXXXXXX" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                💬 WhatsApp Us
+              <a href="https://wa.me/94773506345" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
+                <IconWhatsApp width={18} height={18} /> WhatsApp Us
               </a>
             </div>
           </div>

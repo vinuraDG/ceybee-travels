@@ -2,7 +2,7 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { IconCompass, IconSparkles, IconCar, IconHandshake, IconAward } from '../common/Icons';
 import './About.css';
 
-const logo = '/assets/logo/logo.png';
+const logo = '/assets/logo/ceybee.jpeg';
 
 const features = [
   { Icon: IconCompass,   text: 'Expert local knowledge & insider access' },

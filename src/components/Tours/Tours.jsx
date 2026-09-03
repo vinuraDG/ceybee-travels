@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
+import { useNavigate } from 'react-router-dom';
 import { tours } from '../../data/siteData';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
-import TourDetail from '../TourDetail/TourDetail';
 import './Tours.css';
 
 const filters = [
@@ -17,15 +17,12 @@ const filters = [
 
 export default function Tours() {
   const [active, setActive] = useState('all');
-  const [selectedTour, setSelectedTour] = useState(null);
+  const navigate = useNavigate();
   const headerRef = useScrollReveal();
   const filtered = active === 'all' ? tours : tours.filter(t => t.category === active);
 
   return (
     <>
-      {selectedTour && (
-        <TourDetail tour={selectedTour} onClose={() => setSelectedTour(null)} />
-      )}
       <section id="tours" className="tours">
         <div className="container">
           <div ref={headerRef} className="section-header reveal">
@@ -63,7 +60,7 @@ export default function Tours() {
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.45, delay: i * 0.07 }}
                   className="tour-card"
-                  onClick={() => setSelectedTour(tour)}
+                  onClick={() => navigate(`/tours/${tour.id}`)}
                   style={{ cursor: 'pointer' }}
                 >
                   <div className="tour-img">

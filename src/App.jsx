@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
@@ -10,9 +11,10 @@ import Testimonials from './components/Testimonials/Testimonials';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import FloatingButtons from './components/common/FloatingButtons';
+import TourDetailPage from './components/TourDetail/TourDetailPage';
 import './App.css';
 
-export default function App() {
+function HomePage() {
   return (
     <>
       <Navbar />
@@ -30,5 +32,14 @@ export default function App() {
       <Footer />
       <FloatingButtons />
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/tours/:id" element={<TourDetailPage />} />
+    </Routes>
   );
 }

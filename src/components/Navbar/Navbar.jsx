@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import { IconClose } from '../common/Icons';
 import './Navbar.css';
+
 const logo = '/assets/logo/logo.png';
 
 const navItems = [

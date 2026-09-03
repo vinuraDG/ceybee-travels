@@ -28,13 +28,12 @@
   margin-right: auto;
 }
 .nav-logo img {
-  height: 42px;
+  height: 48px;
   width: auto;
   object-fit: contain;
   transition: height 0.3s;
-  border-radius: 8px;
 }
-.navbar.scrolled .nav-logo img { height: 36px; }
+.navbar.scrolled .nav-logo img { height: 40px; }
 
 .nav-brand-text {
   display: flex;

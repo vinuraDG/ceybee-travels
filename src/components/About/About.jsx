@@ -2,15 +2,17 @@ import { useScrollReveal } from '../../hooks/useScrollReveal';
 import { IconCompass, IconSparkles, IconCar, IconHandshake, IconAward } from '../common/Icons';
 import './About.css';
 
+const logo = '/assets/logo/logo.png';
+
 const features = [
-  { Icon: IconCompass, text: 'Expert local knowledge & insider access' },
-  { Icon: IconSparkles, text: 'Fully personalized itineraries' },
-  { Icon: IconCar, text: 'Premium fleet with professional drivers' },
+  { Icon: IconCompass,   text: 'Expert local knowledge & insider access' },
+  { Icon: IconSparkles,  text: 'Fully personalized itineraries' },
+  { Icon: IconCar,       text: 'Premium fleet with professional drivers' },
   { Icon: IconHandshake, text: 'Trusted hotel & resort partnerships' },
 ];
 
 export default function About() {
-  const leftRef = useScrollReveal();
+  const leftRef  = useScrollReveal();
   const rightRef = useScrollReveal();
 
   return (
@@ -18,6 +20,7 @@ export default function About() {
       <div className="container">
         <div className="about-grid">
 
+          {/* ── Left: company story ── */}
           <div ref={leftRef} className="about-text reveal-left">
             <p className="about-tag">The CeyBee Difference</p>
             <h2 className="about-heading">
@@ -25,7 +28,15 @@ export default function About() {
               <em>to an Art Form</em>
             </h2>
             <p className="about-desc">
-              We curate journeys that whisper luxury and shout authenticity. From private tea-estate tours to secluded beach villas, every detail is crafted for the discerning soul seeking the heart of Sri Lanka.
+              CeyBee Travels is a boutique travel company headquartered in Colombo, Sri Lanka.
+              Founded by passionate local travel experts, we specialize in crafting bespoke
+              journeys that reveal the true soul of the island — its ancient ruins, misty
+              highlands, golden beaches, and warm-hearted people.
+            </p>
+            <p className="about-desc">
+              Every itinerary is built from scratch around you. Whether you dream of watching
+              leopards at Yala at dawn, sipping tea on a Nuwara Eliya estate, or surfing the
+              swells off Arugam Bay — we make it happen, seamlessly and authentically.
             </p>
 
             <div className="about-stats">
@@ -53,6 +64,7 @@ export default function About() {
             </div>
           </div>
 
+          {/* ── Right: main image + logo card ── */}
           <div ref={rightRef} className="about-images reveal-right">
             <div className="about-img-main">
               <img
@@ -61,13 +73,14 @@ export default function About() {
                 loading="lazy"
               />
             </div>
-            <div className="about-img-secondary">
-              <img
-                src="https://images.unsplash.com/photo-1612862862126-865765df2ded?w=500&h=380&auto=format&fit=crop&q=80"
-                alt="Sigiriya Rock Fortress aerial view"
-                loading="lazy"
-              />
+
+            {/* Logo card replaces the small secondary image */}
+            <div className="about-logo-card">
+              <div className="about-logo-card-bg" />
+              <img src={logo} alt="CeyBee Travels" className="about-logo-card-img" />
+              <p className="about-logo-card-name">CeyBee Travels</p>
             </div>
+
             <div className="about-badge">
               <span className="badge-icon"><IconAward width={22} height={22} /></span>
               <div>

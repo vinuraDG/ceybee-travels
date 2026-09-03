@@ -1,26 +1,26 @@
 .destinations { padding: 100px 0; background: var(--cream); overflow: hidden; }
 
-/* Marquee strip */
+/* ── Marquee strip ───────────────────────────────── */
 .dest-marquee-wrap {
   overflow: hidden;
   position: relative;
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 .dest-marquee-wrap::before,
 .dest-marquee-wrap::after {
   content: '';
   position: absolute;
-  top: 0; bottom: 0; width: 80px; z-index: 2;
+  top: 0; bottom: 0; width: 100px; z-index: 2;
   pointer-events: none;
 }
-.dest-marquee-wrap::before { left: 0; background: linear-gradient(to right, var(--cream), transparent); }
-.dest-marquee-wrap::after  { right: 0; background: linear-gradient(to left, var(--cream), transparent); }
+.dest-marquee-wrap::before { left: 0;  background: linear-gradient(to right, var(--cream), transparent); }
+.dest-marquee-wrap::after  { right: 0; background: linear-gradient(to left,  var(--cream), transparent); }
 
 .dest-marquee {
   display: flex;
-  gap: 20px;
+  gap: 16px;
   width: max-content;
-  animation: marqueeScroll 28s linear infinite;
+  animation: marqueeScroll 32s linear infinite;
 }
 .dest-marquee:hover { animation-play-state: paused; }
 @keyframes marqueeScroll {
@@ -30,9 +30,9 @@
 
 .dest-marquee-card {
   position: relative;
-  width: 260px;
-  height: 340px;
-  border-radius: 20px;
+  width: 240px;
+  height: 320px;
+  border-radius: 18px;
   overflow: hidden;
   flex-shrink: 0;
   cursor: pointer;
@@ -46,7 +46,7 @@
 .dest-marquee-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13,13,13,0.75) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(10,22,40,0.8) 0%, transparent 55%);
 }
 .dest-marquee-card-info {
   position: absolute;
@@ -56,7 +56,7 @@
   display: inline-block;
   background: var(--teal);
   color: var(--white);
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -66,76 +66,174 @@
 }
 .dest-card-name {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--white);
 }
 
-/* Grid section */
+/* ── Grid header ─────────────────────────────────── */
 .dest-grid-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 36px;
+  margin-bottom: 28px;
   gap: 20px;
   flex-wrap: wrap;
 }
+
+/* ── Editorial collage grid ──────────────────────── */
 .dest-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 260px 260px;
-  gap: 16px;
+  grid-template-columns: 1.55fr 1fr 1fr;
+  grid-template-rows: 290px 290px 250px;
+  gap: 12px;
 }
+
+/* Item 1 (Sigiriya) — tall left feature */
+.dest-grid-item--0 { grid-row: 1 / 3; }
+
+/* Items 6-7 (Colombo, Nuwara Eliya) — bottom row wide */
+.dest-grid-item--5 { grid-column: 1 / 2; }
+.dest-grid-item--6 { grid-column: 2 / 3; }
+.dest-grid-item--7 { grid-column: 3 / 4; }
+
+/* ── Card base ───────────────────────────────────── */
 .dest-grid-item {
-  border-radius: var(--radius);
-  overflow: hidden;
   position: relative;
+  border-radius: 16px;
+  overflow: hidden;
   cursor: pointer;
 }
-.dest-grid-item:first-child {
-  grid-row: span 2;
-  grid-column: span 1;
-}
+
 .dest-grid-item img {
   width: 100%; height: 100%;
   object-fit: cover;
-  transition: transform 0.55s ease;
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.dest-grid-item:hover img { transform: scale(1.07); }
+.dest-grid-item:hover img { transform: scale(1.08); }
+
+/* Gradient overlay */
 .dest-grid-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(13,13,13,0.7) 0%, transparent 50%);
-  transition: background 0.3s;
+  background: linear-gradient(to top,
+    rgba(10, 22, 40, 0.82) 0%,
+    rgba(10, 22, 40, 0.2) 45%,
+    transparent 70%
+  );
+  transition: background 0.4s ease;
 }
 .dest-grid-item:hover .dest-grid-overlay {
-  background: linear-gradient(to top, rgba(13,13,13,0.8) 0%, rgba(13,13,13,0.1) 60%);
+  background: linear-gradient(to top,
+    rgba(10, 22, 40, 0.92) 0%,
+    rgba(10, 22, 40, 0.35) 55%,
+    rgba(23, 165, 138, 0.12) 100%
+  );
 }
+
+/* Card info — slides up on hover */
 .dest-grid-info {
   position: absolute;
-  bottom: 18px; left: 18px;
+  bottom: 0; left: 0; right: 0;
+  padding: 20px 22px;
+  transform: translateY(0);
+  transition: transform 0.4s ease;
 }
+
 .dest-grid-tag {
   display: inline-block;
-  background: var(--primary);
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.3);
   color: var(--white);
-  font-size: 0.65rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 2px 8px; border-radius: 100px; margin-bottom: 4px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 100px;
+  margin-bottom: 8px;
 }
+
 .dest-grid-name {
   font-family: var(--font-heading);
-  font-size: 1.1rem; font-weight: 700; color: var(--white);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
-.dest-grid-item:first-child .dest-grid-name { font-size: 1.5rem; }
+.dest-grid-item--0 .dest-grid-name { font-size: 1.7rem; }
 
+.dest-grid-tagline {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.35s ease 0.05s;
+}
+
+.dest-grid-discover {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--teal-light);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
+}
+
+/* Hover: reveal tagline + discover */
+.dest-grid-item:hover .dest-grid-tagline {
+  max-height: 60px;
+  opacity: 1;
+}
+.dest-grid-item:hover .dest-grid-discover {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Teal left border accent on hover */
+.dest-grid-item::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 20%; bottom: 20%;
+  width: 3px;
+  background: var(--teal);
+  border-radius: 0 3px 3px 0;
+  opacity: 0;
+  transform: scaleY(0.3);
+  transition: opacity 0.3s ease, transform 0.4s ease;
+  z-index: 2;
+}
+.dest-grid-item:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* ── Responsive ──────────────────────────────────── */
 @media (max-width: 900px) {
-  .dest-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; }
-  .dest-grid-item:first-child { grid-row: span 1; }
+  .dest-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .dest-grid-item--0 { grid-row: span 1; grid-column: span 2; height: 280px; }
+  .dest-grid-item--5,
+  .dest-grid-item--6,
+  .dest-grid-item--7 { grid-column: auto; }
+  .dest-grid-item { height: 200px; }
   .dest-marquee-card { width: 200px; height: 260px; }
 }
 @media (max-width: 600px) {
-  .dest-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .dest-grid-item { height: 220px; }
+  .dest-grid { grid-template-columns: 1fr; }
+  .dest-grid-item--0 { grid-column: 1; height: 260px; }
+  .dest-grid-item { height: 200px; }
   .dest-marquee-card { width: 170px; height: 220px; }
 }

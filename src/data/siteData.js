@@ -53,12 +53,14 @@ export const heroSlides = [
 ];
 
 export const destinations = [
-  { name: 'Sigiriya',  tag: 'Cultural',  image: U(SL.sigiriyaAerial, 700, 900) },
-  { name: 'Ella',      tag: 'Highlands', image: U(SL.ellaArches,     700, 700) },
-  { name: 'Mirissa',   tag: 'Beach',     image: U(SL.stiltFish,      700, 700) },
-  { name: 'Kandy',     tag: 'Heritage',  image: U(SL.kandyTemple,    700, 700) },
-  { name: 'Yala',      tag: 'Wildlife',  image: U(SL.elephants,      700, 700) },
-  { name: 'Galle',     tag: 'Historic',  image: U(SL.galleLight,     700, 700) },
+  { name: 'Sigiriya',      tag: 'Cultural',   tagline: 'Climb the ancient rock fortress',      image: U(SL.sigiriyaAerial, 800, 1000) },
+  { name: 'Ella',          tag: 'Highlands',  tagline: 'Mist, trains & nine arches',           image: U(SL.ellaArches,     700, 500) },
+  { name: 'Mirissa',       tag: 'Beach',      tagline: 'Whale watching & golden sands',        image: U(SL.stiltFish,      700, 500) },
+  { name: 'Kandy',         tag: 'Heritage',   tagline: 'Temple of the Tooth & dance shows',    image: U(SL.kandyTemple,    700, 500) },
+  { name: 'Yala',          tag: 'Wildlife',   tagline: 'Leopards, elephants & wild safari',    image: U(SL.elephants,      700, 500) },
+  { name: 'Galle',         tag: 'Historic',   tagline: 'Dutch fort, art & ocean views',        image: U(SL.galleLight,     700, 450) },
+  { name: 'Colombo',       tag: 'City',       tagline: 'Lotus Tower & vibrant street life',    image: U(SL.colombo,        700, 450) },
+  { name: 'Nuwara Eliya',  tag: 'Tea Country',tagline: 'Lush tea estates & cool highlands',    image: U(SL.waterfall,      700, 450) },
 ];
 
 export const galleryImages = [
